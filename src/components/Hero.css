@@ -1,0 +1,200 @@
+/* Hero: базовые стили */
+.hero {
+  position: relative;
+  background: #18191a;
+  overflow: hidden;
+  padding: 10rem 0 20rem 0; 
+}
+.hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero--about {
+  padding: 16rem 0 24rem 0; 
+}
+
+.hero--about .container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+
+.hero--about .hero-content {
+  max-width: 52.3rem;
+}
+
+.hero--about .hero-title {
+  font-size: 8rem;
+  margin-bottom: 2rem;
+  line-height: 0.9;
+}
+
+.hero--about .hero-subtitle {
+  font-size: 1.6rem;
+  opacity: 0.6;
+  margin-bottom: 3rem;
+  line-height: 1.5;
+}
+
+.hero--about .hero-form-btn {
+  margin-top: 2rem;
+  box-shadow: 0 4px 20px rgba(255, 168, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.hero--about .hero-form-btn:hover {
+  background: #FFB800;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(255, 168, 0, 0.4);
+}
+
+.hero--about .hero-form-btn:active {
+  transform: translateY(0);
+}
+
+/* Градиенты и фон */
+.hero::before, .hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+}
+.hero::before {
+  width: 420px;
+  height: 320px;
+  left: -100px;
+  bottom: -80px;
+  background: #EF9364;
+}
+.hero::after {
+  width: 340px;
+  height: 260px;
+  right: -80px;
+  top: -60px;
+  background: #8B7BCF;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: 
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 48px 48px, 48px 48px;
+  background-position: 0 0, 0 0;
+}
+
+.hero-title {
+  font-size: 9.6rem;
+  font-weight: 700;
+  color: #fff;
+  max-width: 52rem;
+  margin-bottom: 1.6rem;
+  line-height: 0.8
+}
+.hero-gradient {
+  background: linear-gradient(90deg, #FF8A1F 0%, #FFD600 50%, #7DE2FC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-weight: 700;
+}
+.hero-subtitle {
+  font-size: 1.6rem;
+  color: #fff;
+  opacity: 0.4;
+  margin-bottom: 3.2rem;
+  max-width: 52rem;
+  line-height: 1.4;
+}
+.hero-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 420px;
+}
+.hero-input {
+  flex: 1 1 0;
+  background: #18191a;
+  border: 2px solid #E6E6E6;
+  border-radius: 32px;
+  padding: 1.5rem 2.8rem;
+  font-size: 1.6rem;
+  color: #fff;
+  outline: none;
+  font-weight: 400;
+  transition: border 0.2s;
+}
+.hero-input::placeholder {
+  color: #E6E6E6;
+  opacity: 1;
+  font-weight: 600;
+}
+/* Стили для кнопки hero перенесены в Button.css */
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .hero--about .container {
+    padding-left: 5rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-title {
+    font-size: 6.2rem;
+  }
+  .hero-input {
+    font-size: 1rem;
+  }
+  .hero--about {
+    padding:0 3rem;
+    padding-top: 5rem;
+  }
+  .hero--about .container {
+    padding-left: 3rem;
+  }
+  .hero--about .hero-title {
+    font-size: 5rem;
+  }
+  .hero--about .hero-subtitle {
+    font-size: 1.6rem;
+  }
+  /* Стили для кнопки hero перенесены в Button.css */
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 10rem 1rem 6rem 1rem
+  }
+  .hero-content {
+    padding: 0 ;
+  }
+  .hero-title {
+    font-size: 4rem;
+  }
+  .hero--about {
+    padding: 0 2rem;
+  }
+  .hero--about .container {
+    padding-left: 2rem;
+  }
+  .hero--about .hero-content {
+    padding: 4rem 0;
+  }
+  .hero--about .hero-title {
+    font-size: 3.5rem;
+  }
+  .hero--about .hero-subtitle {
+    font-size: 1.4rem;
+  }
+  /* Стили для кнопки hero перенесены в Button.css */
+} 

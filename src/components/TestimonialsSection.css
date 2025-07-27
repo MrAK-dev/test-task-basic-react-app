@@ -1,0 +1,125 @@
+/* Testimonials section */
+.testimonials-section {
+  background: #000;
+  padding: 8rem 0 9rem 0;
+}
+
+.testimonials-header-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 5.6rem;
+}
+
+.testimonials-title {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.testimonials-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.testimonial-card {
+  background: #000;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  padding: 2rem 2.4rem 1rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: none;
+  transition: border 0.2s;
+  overflow: visible;
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 2.4rem;
+}
+.testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: none;
+}
+.testimonial-name {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.testimonial-subtitle {
+  color: #fff;
+  opacity: 0.4;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.testimonial-text {
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.testimonials-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+  margin: 0;
+}
+/* Стили для кнопок навигации testimonials перенесены в Button.css */
+
+@media (max-width: 1100px) {
+  .testimonials-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+}
+@media (max-width: 900px) {
+  .testimonials-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .testimonials-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+}
+@media (max-width: 600px) {
+  .testimonials-section {
+    padding: 32px 0 24px 0;
+  }
+  .testimonials-title {
+    font-size: 1.05rem;
+  }
+  .testimonials-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .testimonials-header-row {
+    padding: 0 2px;
+    margin-bottom: 12px;
+  }
+  .testimonials-nav {
+    gap: 10px;
+  }
+  .testimonial-card {
+    padding: 14px 8px 12px 8px;
+    min-height: 120px;
+  }
+  .testimonial-avatar {
+    width: 36px;
+    height: 36px;
+  }
+} 

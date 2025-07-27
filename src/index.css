@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'Agrandir';
+  src: url('./fonts/agrandir/Agrandir-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Agrandir';
+  src: url('./fonts/agrandir/Agrandir-TextBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Сброс стилей и базовые переменные */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Agrandir', Arial, sans-serif;
+  background: #18191a;
+  color: #fff;
+  line-height: 1;
+}
+
+html {
+  /* font-size: 10px; */
+  /*  10px / 16px = .625 = 62.5% */
+  /* Percentage of users's browser font-size settings */
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}

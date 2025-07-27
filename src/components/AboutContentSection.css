@@ -1,0 +1,49 @@
+/* About Content Section: стили для секции с контентом */
+.about-content-section {
+  background: #18191a;
+  color: #fff;
+  padding: 8rem 0;
+}
+
+.about-content-section .container {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 4rem;
+}
+
+/* Стили для кнопки go-home перенесены в Button.css */
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .about-content-section .container {
+    padding: 0 5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-content-section {
+    padding: 6rem 0;
+  }
+  .about-content-section .container {
+    padding: 0 3rem;
+    gap: 4rem;
+  }
+  /* Стили для кнопки go-home перенесены в Button.css */
+}
+
+@media (max-width: 600px) {
+  .about-content-section {
+    padding: 4rem 0;
+  }
+  .about-content-section .container {
+    padding: 0 2rem;
+    gap: 3rem;
+  }
+  /* Стили для кнопки go-home перенесены в Button.css */
+} 

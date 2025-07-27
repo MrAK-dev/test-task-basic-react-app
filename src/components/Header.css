@@ -1,0 +1,397 @@
+/* Header: pixel-perfect по макету */
+.header {
+  width: 100%;
+  min-height: 72px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: linear-gradient(90deg, rgba(24,25,26,0.5) 70%);
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.12);
+  backdrop-filter: blur(8px);
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-list li {
+  list-style: none;
+}
+
+.nav-list a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 8px 0;
+  transition: color 0.2s, border-bottom 0.2s;
+  border-bottom: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+}
+
+.nav-arrow {
+  font-size: 1em;
+  margin-left: 0.2em;
+  transition: transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Анимация поворота стрелки при открытом меню */
+.nav-arrow.rotated {
+  transform: rotate(180deg) !important;
+}
+
+/* Подсветка активного пункта Company */
+.nav-list a.active,
+.nav-list a.active:hover {
+  color: #ffb86c;
+  border-bottom: 2px solid #ffb86c;
+}
+
+.nav-list a:hover {
+  color: #ffb86c;
+  border-bottom: 2px solid #ffb86c;
+}
+
+/* Стили для выпадающего меню */
+.nav-item-with-dropdown {
+  position: relative;
+}
+
+/* Улучшение UX для тачпадов и мобильных */
+.nav-item-with-dropdown a {
+  cursor: pointer;
+  padding: 12px 8px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Стили для активного состояния при клике */
+.nav-item-with-dropdown a:active {
+  background: rgba(255, 184, 108, 0.1);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(24, 25, 26, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  min-width: 180px;
+  padding: 8px 0;
+  margin-top: 0;
+  animation: dropdownFadeIn 0.2s ease-out;
+  z-index: 1001;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.2s;
+}
+
+.dropdown-item {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 12px 20px;
+  transition: all 0.2s ease;
+  border: none;
+  background: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 184, 108, 0.1);
+  color: #ffb86c;
+  border-bottom: none;
+}
+
+/* Стили для активного состояния пунктов меню */
+.dropdown-item:active {
+  background: rgba(255, 184, 108, 0.2);
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 601px) {
+  /* Вращение стрелки при hover только для устройств с мышью */
+  @media (hover: hover) {
+    .nav-item-with-dropdown:hover .nav-arrow {
+      transform: rotate(180deg);
+    }
+  }
+  /* Скрываем мобильное меню на десктопе */
+  .mobile-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .header-inner {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .nav {
+    gap: 16px;
+    justify-content: flex-end;
+  }
+  .nav-list {
+    gap: 16px;
+    display: none !important;
+  }
+  /* Показываем мобильное меню на планшетах и мобильных */
+  .mobile-menu {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .header-inner {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .logo-text {
+    font-size: 1.1rem;
+  }
+  .nav-list {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-inner {
+    min-height: 56px;
+  }
+}
+
+/* Мобильное меню */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(24, 25, 26, 0.98);
+  box-shadow: -2px 0 16px 0 rgba(0,0,0,0.18);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  animation: mobileMenuSlideIn 0.25s ease;
+}
+
+@keyframes mobileMenuSlideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.mobile-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 60px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+}
+
+.mobile-menu-link {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: left;
+  padding: 20px 32px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-menu-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 184, 108, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.mobile-menu-link:hover::before {
+  left: 100%;
+}
+
+/* Для стрелки в мобильном меню */
+.mobile-menu-link .nav-arrow {
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu-link:hover {
+  background: rgba(255, 184, 108, 0.1);
+  color: #ffb86c;
+  transform: translateX(8px);
+}
+
+.mobile-menu-link:active {
+  background: rgba(255, 184, 108, 0.2);
+  transform: translateX(4px);
+}
+
+.mobile-contact-btn {
+  color: #ffb86c;
+  border: 2px solid #ffb86c;
+  border-radius: 32px;
+  margin-top: 18px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: transparent;
+  padding: 12px 32px;
+  margin-left: 32px;
+  margin-right: 32px;
+  width: calc(100% - 64px);
+}
+
+/* Улучшенные стили для мобильного выпадающего меню */
+.mobile-dropdown-menu {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
+  overflow: hidden;
+  animation: mobileDropdownSlideIn 0.3s ease-out;
+}
+
+@keyframes mobileDropdownSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 200px;
+  }
+}
+
+.mobile-dropdown-item {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: left;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.mobile-dropdown-item:hover {
+  background: rgba(255, 184, 108, 0.15);
+  color: #ffb86c;
+  transform: translateX(4px);
+}
+
+.mobile-dropdown-item:active {
+  background: rgba(255, 184, 108, 0.25);
+  transform: translateX(2px);
+}
+
+/* Добавляем иконку для пунктов меню */
+.mobile-dropdown-item::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+  border-radius: 50%;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+}
+
+.mobile-dropdown-item:hover::before {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Специальные стили для активного состояния */
+.mobile-dropdown-item[data-action="navigate"] {
+  font-weight: 600;
+}
+
+.mobile-dropdown-item[data-action="navigate"]:hover::before {
+  background: #ffb86c;
+  opacity: 1;
+} 

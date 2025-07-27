@@ -1,0 +1,163 @@
+/* TrustedBySection pixel-perfect */
+.trustedby {
+  background: #000;
+  padding: 8rem 0 12.4rem 0;
+}
+
+.trustedby-content {
+  display: flex;
+  gap: 3.2rem;
+  margin-bottom: 6.4rem;
+}
+
+.trustedby-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  max-width: 63rem;
+  line-height: 1.2;
+}
+
+.trustedby-desc {
+  color: #fff;
+  opacity: 0.4;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  max-width: 63rem;
+}
+
+/* Секция логотипов, черный фон */
+.trustedby-logos {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+
+/* Ряд логотипов, mobile first: колонка */
+.trustedby-logos-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2.4rem;
+}
+
+/* Первый ряд — отступ слева */
+.trustedby-logos-row--first {
+  margin-left: 2.4rem;
+}
+
+/* Второй ряд — отступ справа */
+.trustedby-logos-row--second {
+  margin-left: -6.2rem;
+}
+
+.trustedby-logo-img {
+  max-height: 61px;
+}
+
+/* Адаптация для больших экранов */
+@media (max-width: 1300px) {
+  .trustedby-logo-img {
+    max-height: 55px;
+  }
+  
+  .trustedby-logos-row--first {
+    margin-left: 0rem;
+  }
+  
+  .trustedby-logos-row--second {
+    margin-left: 0rem;
+  }
+}
+
+/* Планшеты */
+@media (max-width: 1200px) {
+  .trustedby-content {
+    gap: 2.4rem;
+  }
+  
+  .trustedby-title {
+    font-size: 3.2rem;
+  }
+  
+  .trustedby-logos-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.6rem;
+  }
+  
+  .trustedby-logos-row--first,
+  .trustedby-logos-row--second {
+    margin-left: 0;
+  }
+  
+  .trustedby-logo-img {
+    max-height: 56px;
+  }
+}
+
+/* Средние экраны */
+@media (max-width: 900px) {
+  .trustedby-content {
+    gap: 2rem;
+  }
+  
+  .trustedby-title {
+    font-size: 2.8rem;
+  }
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .trustedby {
+    padding: 4rem 0 6rem 0;
+  }
+  
+  .trustedby-content {
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3.2rem;
+  }
+  
+  .trustedby-title {
+    font-size: 2.8rem;
+    max-width: 100%;
+  }
+  
+  .trustedby-desc {
+    font-size: 1.4rem;
+    max-width: 100%;
+  }
+  
+  .trustedby-logos {
+    gap: 2rem;
+  }
+  
+  .trustedby-logos-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.6rem;
+  }
+  
+  .trustedby-logo-img {
+    max-height: 48px;
+  }
+}
+
+/* Маленькие мобильные */
+@media (max-width: 480px) {
+  .trustedby-title {
+    font-size: 2.4rem;
+  }
+  
+  .trustedby-desc {
+    font-size: 1.3rem;
+  }
+  
+  .trustedby-logos-row {
+    gap: 1.2rem;
+  }
+  
+  .trustedby-logo-img {
+    max-height: 40px;
+  }
+}
